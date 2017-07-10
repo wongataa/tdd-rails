@@ -30,7 +30,14 @@ describe Zombie do
   end
 
   # Matcher type: includes
-  it 'includes a tweet' do
+  it 'has tweeted arrrggg' do
     expect(zombie.tweets).to include('arrrggg')
+  end
+
+
+  # Matcher type: change
+  it 'gets smarter by eating brains' do
+    expect { zombie.eats_brains }.to change { zombie.iq }.from(0).to(3)
+    # from/to methods aside, there are also by(), by_at_most() & by_at_least()
   end
 end
