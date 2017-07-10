@@ -34,6 +34,14 @@ describe Zombie do
     expect(zombie.tweets).to include('arrrggg')
   end
 
+  # Matcher type: have/have_at_least/have_at_most
+  # The Have matcher is actually depreciated - see below changelog
+  # http://github.com/rspec/rspec-expectations/compare/v2.99.2...v3.0.0.beta1
+  #
+  # use the below syntax instead (and remember fewer things!)
+  it 'has only one tweet' do
+    expect(zombie.tweets.size).to eq(1)
+  end
 
   # Matcher type: change
   it 'gets smarter by eating brains' do

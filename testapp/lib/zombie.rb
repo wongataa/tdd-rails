@@ -8,7 +8,7 @@ class Zombie
     @iq      = 0
     @alive   = false
     @rotting = true
-    @tweets  = %w[uuuuuunnhhhh arrrggg]
+    @tweets  = %w[arrrggg]
   end
 
   def eats_brains
