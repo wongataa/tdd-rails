@@ -48,4 +48,11 @@ describe Zombie do
     expect { zombie.eats_brains }.to change { zombie.iq }.from(0).to(3)
     # from/to methods aside, there are also by(), by_at_most() & by_at_least()
   end
+
+  # Matcher type: raise-error
+  # match to specific errors, regex, with_message, class+msg, no error
+  it 'can\'t stay dead [error], but eats brains[no error]' do
+    expect { zombie.stay_dead }.to raise_error(NoMethodError, /.*stay_dead.*/)
+    expect { zombie.eats_brains }.not_to raise_error
+  end
 end
