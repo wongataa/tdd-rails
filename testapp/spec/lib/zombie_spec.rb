@@ -28,4 +28,9 @@ describe Zombie do
     # ie methods that end in a ? returning true or false
     expect(zombie).to be_hungry
   end
+
+  # Matcher type: includes
+  it 'includes a tweet' do
+    expect(zombie.tweets).to include('arrrggg')
+  end
 end
